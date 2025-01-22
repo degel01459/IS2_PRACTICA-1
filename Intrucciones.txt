@@ -1,0 +1,62 @@
+
+Configurar el Ambiente en WSL2
+
+Configurar WSL2
+Asegúrate de tener WSL2 configurado con una distribución de Linux (por ejemplo, Ubuntu).
+
+Abre WSL2 desde la terminal:
+wsl
+
+Actualiza los paquetes:
+sudo apt update && sudo apt upgrade -y
+
+Clonar el Repositorio desde GitHub
+Copia la URL de tu repositorio (en GitHub: Code > HTTPS).
+Clona el repositorio en WSL2:
+bash
+Copiar
+Editar
+git clone <URL_DEL_REPOSITORIO>
+
+Ingresa al directorio del repositorio:
+bash
+Copiar
+Editar
+cd <NOMBRE_DEL_REPOSITORIO>
+
+Configurar el Ambiente de Trabajo
+a) Inicializar un Proyecto con React.js y Next.js
+Instala Node.js y npm:
+
+bash
+Copiar
+Editar
+sudo apt install -y nodejs npm
+Instala el manejador de versiones de Node (opcional pero recomendado):
+
+bash
+Copiar
+Editar
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.bashrc
+nvm install --lts
+Verifica las versiones:
+
+bash
+Copiar
+Editar
+node -v
+npm -v
+Instala Yarn (opcional pero recomendado para trabajar con React/Next.js):
+
+bash
+Copiar
+Editar
+npm install --global yarn
+Configura el proyecto con Next.js:
+
+bash
+Copiar
+Editar
+npx create-next-app@latest frontend
+cd frontend
