@@ -3,6 +3,6 @@
     "pg": "^8.13.1"
   },
   "scripts": {
-    "test": "echo \"No test script defined\" && exit 1"
+    "test": "jest"
   }
 }
