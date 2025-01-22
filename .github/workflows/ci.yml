@@ -13,17 +13,27 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+     # Plataformas de trabajo
+
     steps:
+      # Obtener el código
       - name: Checkout code
         uses: actions/checkout@v3
-
+        
+      # Configurar Node.js (versión que uses)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '22'
 
+      # Instalar las dependencias
       - name: Install dependencies
-        run: yarn install
+        run: npm install
+      - name: Install dependencies
+        run: yarm install
 
+       # Ejecutar los tests
       - name: Run tests
-        run: yarn test
+        run: npm test
+      - name: Run tests
+        run: yarm test
