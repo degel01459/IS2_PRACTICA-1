@@ -15,6 +15,17 @@ jobs:
     runs-on: ubuntu-latest
      # Plataformas de trabajo
 
+    services:
+      postgres:
+        image: postgres:13  # Versión de PostgreSQL que prefieras
+        options: --health-cmd="pg_isready -U postgres" --health-timeout=5s --health-interval=10s --health-retries=5
+        ports:
+          - 5432:5432  # Expone el puerto de PostgreSQL
+        env:
+          POSTGRES_USER: admin
+          POSTGRES_PASSWORD: 1459
+          POSTGRES_DB: taller_db
+
     steps:
       # Obtener el código
       - name: Checkout code
